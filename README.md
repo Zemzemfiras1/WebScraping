@@ -1,4 +1,4 @@
-# Web Scarping
+# Web Scraping 
 
 <p align="justify">
 Web scraping is the automated process of extracting large amounts of data from websites. In bioinformatics, it is especially valuable for gathering publicly available data from biological databases, such as gene sequences, protein structures, or clinical datasets. By streamlining data collection, web scraping enables researchers to efficiently access and compile vast amounts of information, which is critical for large-scale analyses like genome-wide association studies (GWAS) or drug discovery.
