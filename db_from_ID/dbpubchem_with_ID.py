@@ -63,8 +63,15 @@ def findMW(cid):
     return 'N/A'  # Return 'N/A' if not found
 
 
+def read_cids_from_file(filename):
+    # Read CIDs from a file and return as a set of integers
+    with open(filename, 'r') as file:
+        cids = {int(line.strip()) for line in file if line.strip().isdigit()}
+    return cids
+
+
 def main():
-    cids = {10208, 6329, 5950, 6418}  # Example CIDs
+    cids = read_cids_from_file('input_ID.txt')  # Read CIDs from input_ID.txt
     compounds_data = []
 
     for cid in cids:
@@ -76,7 +83,6 @@ def main():
 
             # Debug: Print the title of the page
             page_title = soup.title.string
-            print("Page Title:", page_title)
 
             # Extract relevant information
             title_parts = page_title.split(" | ")
@@ -87,7 +93,6 @@ def main():
 
             # Append compound data to the list
             compounds_data.append({
-                
                 'Name': compound_name,
                 'ID': cid,
                 'Formula': chemical_formula,
@@ -101,7 +106,7 @@ def main():
     df = pd.DataFrame(compounds_data)
 
     # Save the DataFrame to a CSV file
-    df.to_csv('output.csv', index=False)
+    df.to_csv('output_with_ID.csv', index=False)
 
     # Print the DataFrame
     print(df)
