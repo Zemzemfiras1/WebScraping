@@ -87,11 +87,12 @@ def main():
 
             # Append compound data to the list
             compounds_data.append({
-                'ID': cid,
+                
                 'Name': compound_name,
-                'SMILES': smiles,
+                'ID': cid,
+                'Formula': chemical_formula,
                 'Molecular Weight': molecular_weight,
-                'Chemical Formula': chemical_formula
+                'SMILES': smiles
             })
         else:
             print(f"Error fetching data for CID {cid}: {response.status_code}")
